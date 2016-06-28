@@ -1,0 +1,35 @@
+body {
+  background-image: url("/swirl_pattern.png");
+}
+
+.jumbotron {
+  background-color: #ffffff !important;
+}
+
+.jar {
+  background-image: url("/jar.jpeg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+}
+
+#guess {
+  height:100px;
+  width:100px;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;     /* Align the flex-items vertically */
+  justify-content: center;
+}
+
