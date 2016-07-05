@@ -9,8 +9,9 @@ body {
   right: 15%;
 }
 
-h3 .description{
+.description{
   padding: 10px;
+  line-height: 20px;
 }
 
 #box1, #box2, #box3, #box4, #box5 {
@@ -63,6 +64,13 @@ strong {
   justify-content: center;
 }
 
+.past-guesses {
+/*  display: table-cell;
+  vertical-align: middle;*/
+  line-height: 50px;
+  margin: 0;
+}
+
 .win {
   font-size: 75px !important;
   background: -webkit-linear-gradient(#26c199, #38a78a);
@@ -84,45 +92,42 @@ canvas {
   pointer-events: none;
 }
 
-.bubble
-{
-position: absolute;
-top: 10px;
-right: 0px;
-width: 300px;
-height: 130px;
-padding: 0px;
-background: #FFFFFF;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-border: #000000 solid 5px;
+.bubble {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  width: 300px;
+  height: 130px;
+  padding: 0px;
+  background: #FFFFFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: #000000 solid 5px;
 }
 
-.bubble:after
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 15px 0 15px 15px;
-border-color: transparent #FFFFFF;
-display: block;
-width: 0;
-z-index: 1;
-right: -15px;
-top: 76px;
+.bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent #FFFFFF;
+  display: block;
+  width: 0;
+  z-index: 1;
+  right: -15px;
+  top: 76px;
 }
 
-.bubble:before
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 19px 0 19px 19px;
-border-color: transparent #000000;
-display: block;
-width: 0;
-z-index: 0;
-right: -24px;
-top: 72px;
+.bubble:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 19px 0 19px 19px;
+  border-color: transparent #000000;
+  display: block;
+  width: 0;
+  z-index: 0;
+  right: -24px;
+  top: 72px;
 }

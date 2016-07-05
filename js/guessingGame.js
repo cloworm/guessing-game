@@ -65,7 +65,7 @@ function checkGuess(){
     $('.notification').html("<h1 class=\"animated wobble lose\"><strong>YOU LOSE</strong></h1>");
     guesses.push(playersGuess);
     $('.chance').html("CHANCES");
-    $('#box' + guesses.length).html("<h3>" + guesses[guesses.length - 1] + "</h3>");
+    $('#box' + guesses.length).html("<h3 class=\"past-guesses\">" + guesses[guesses.length - 1] + "</h3>");
     $('.tries').html(0);
     endGame();
   } else {
@@ -75,7 +75,7 @@ function checkGuess(){
       $('.chance').html("CHANCE");
     }
     $('.tries').html(5-guesses.length);
-    $('#box' + guesses.length).html("<h3>" + guesses[guesses.length - 1] + "</h3>");
+    $('#box' + guesses.length).html("<h3 class=\"past-guesses\">" + guesses[guesses.length - 1] + "</h3>");
   }
 }
 
