@@ -9,7 +9,6 @@ var guesses = [];
 // Generate the Winning Number
 
 function generateWinningNumber(){
-	// add code here
   return Math.floor((Math.random() * 100) + 1);
 }
 
@@ -30,7 +29,6 @@ function playersGuessSubmission(event){
 // Determine if the next guess should be a lower or higher number
 
 function lowerOrHigher(){
-	// add code here
   var amount;
   if(playersGuess > winningNumber) {
     amount = Math.ceil((playersGuess/winningNumber)/10)*10;
@@ -44,7 +42,6 @@ function lowerOrHigher(){
 // Check if the Player's Guess is the winning number
 
 function checkGuess(){
-	// add code here
   var duplicate = false;
 
   for(var i = 0; i < guesses.length; i++) {
@@ -65,9 +62,15 @@ function checkGuess(){
 }
 
 // Create a provide hint button that provides additional clues to the "Player"
+$(document).ready(function() {
+  $('#hint').on('click', provideHint);
+})
 
-function provideHint(){
-	// add code here
+function provideHint(event){
+  event.preventDefault();
+  var high = Math.ceil(winningNumber/10)*10;
+  var low = Math.floor(winningNumber/10)*10;
+  $('#hint-text').html("<h7>The number is between " + low + " and " + high + ".</h7>");
 }
 
 // Allow the "Player" to Play Again
