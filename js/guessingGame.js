@@ -54,7 +54,7 @@ function checkGuess(){
 
   if (playersGuess === winningNumber) {
     $('.notification').html("<h1 class=\"animated tada win\"><strong>YOU WIN!</strong></h1>");
-    $('.face').html("<img src=\"/jellybeans-pile.png\">");
+    $('.face').html("<img src=\"jellybeans-pile.png\">");
     $('#canvas').show();
     endGame();
   } else if (playersGuess < 1 || playersGuess > 100) {
