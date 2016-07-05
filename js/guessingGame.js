@@ -2,6 +2,7 @@
 // try to elminate these global variables in your project, these are here just to start.
 
 var playersGuess;
+var guesses = [];
 
 /* **** Guessing Game Functions **** */
 
@@ -22,6 +23,7 @@ $(document).ready(function() {
 function playersGuessSubmission(event){
   event.preventDefault();
 	playersGuess = +$('#guess').val();
+  checkGuess();
   $('#guess').val("");
 }
 
@@ -35,6 +37,22 @@ function lowerOrHigher(){
 
 function checkGuess(){
 	// add code here
+  var duplicate = false;
+
+  for(var i = 0; i < guesses.length; i++) {
+    if(guesses[i] == playersGuess) {
+      duplicate = true;
+    }
+  }
+
+  if (playersGuess === winningNumber) {
+    $('.notification').html("<p>You Win!</p>");
+  } else if (duplicate == true) {
+    $('.notification').html("<p>You've already guessed that.</p>");
+  } else {
+    $('.notification').html("<p>Try Again</p>");
+    guesses.push(playersGuess);
+  }
 }
 
 // Create a provide hint button that provides additional clues to the "Player"
