@@ -55,11 +55,13 @@ function checkGuess(){
   if (playersGuess === winningNumber) {
     $('.notification').html("<h1 class=\"animated tada win\"><strong>YOU WIN!</strong></h1>");
     $('#canvas').show();
+    endGame();
   } else if (duplicate == true) {
     $('.notification').html("<p>You've already guessed that.</p>");
   } else if (guesses.length == 4) {
     $('.notification').html("<h1 class=\"animated wobble lose\"><strong>YOU LOSE</strong></h1>");
     $('.tries').html(0);
+    endGame();
   } else {
     $('.notification').html(lowerOrHigher());
     guesses.push(playersGuess);
@@ -72,7 +74,7 @@ $(document).ready(function() {
   $('#hint').on('click', provideHint);
 })
 
-function provideHint(event){
+function provideHint(event) {
   event.preventDefault();
   var high = Math.ceil(winningNumber/10)*10;
   var low = Math.floor(winningNumber/10)*10;
@@ -85,14 +87,22 @@ $(document).ready(function() {
   $('#play-again').on('click', playAgain);
 });
 
-function playAgain(event){
+function playAgain(event) {
   winningNumber = generateWinningNumber();
   guesses = [];
   $('.notification').html("");
   $('.hint-text').html("");
+  $('.face').html("");
   $('.tries').html(5);
   $('#canvas').hide();
 }
 
+function endGame() {
+  //guess, hint, submit
+  $('#your-guess').hide();
+  $('#guess').hide();
+  $('#hint').hide();
+  $('#submit').hide();
+}
 
 /* **** Event Listeners/Handlers ****  */

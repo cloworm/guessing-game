@@ -1,3 +1,5 @@
+// Confetti code from http://jsfiddle.net/Javalsu/vxP5q/743/?utm_source=website&utm_medium=embed&utm_campaign=vxP5q
+
 (function () {
     // globals
     var canvas;
