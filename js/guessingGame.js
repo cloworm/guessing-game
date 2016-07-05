@@ -33,10 +33,10 @@ function playersGuessSubmission(event){
 function lowerOrHigher(){
   var amount;
   if(playersGuess > winningNumber) {
-    amount = Math.ceil((playersGuess/winningNumber)/10)*10;
+    amount = Math.ceil((playersGuess-winningNumber+1)/10)*10;
     return "<p>Too high! You are less than " + amount + " off.</p>";
   } else {
-    amount = Math.ceil((playersGuess/winningNumber)/10)*10;
+    amount = Math.ceil((winningNumber-playersGuess+1)/10)*10;
     return "<p>Too low! You are less than " + amount + " off.</p>";
   }
 }
