@@ -58,14 +58,17 @@ function checkGuess(){
     endGame();
   } else if (duplicate == true) {
     $('.notification').html("<p>You've already guessed that.</p>");
-  } else if (guesses.length == 4) {
+  } else if (guesses.length >= 4) {
     $('.notification').html("<h1 class=\"animated wobble lose\"><strong>YOU LOSE</strong></h1>");
+    guesses.push(playersGuess);
+    $('#box' + guesses.length).html("<h3>" + guesses[guesses.length - 1] + "</h3>");
     $('.tries').html(0);
     endGame();
   } else {
     $('.notification').html(lowerOrHigher());
     guesses.push(playersGuess);
     $('.tries').html(5-guesses.length);
+    $('#box' + guesses.length).html("<h3>" + guesses[guesses.length - 1] + "</h3>");
   }
 }
 
@@ -95,6 +98,7 @@ function playAgain(event) {
   $('.face').html("");
   $('.tries').html(5);
   $('#canvas').hide();
+  newGame();
 }
 
 function endGame() {
@@ -105,4 +109,15 @@ function endGame() {
   $('#submit').hide();
 }
 
+function newGame() {
+  $('#your-guess').show();
+  $('#guess').show();
+  $('#hint').show();
+  $('#submit').show();
+  $('#box1').html("");
+  $('#box2').html("");
+  $('#box3').html("");
+  $('#box4').html("");
+  $('#box5').html("");
+}
 /* **** Event Listeners/Handlers ****  */

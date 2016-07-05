@@ -9,12 +9,13 @@ body {
   right: 15%;
 }
 
-.box {
+#box1, #box2, #box3, #box4, #box5 {
   height: 50px;
   width: 50px;
   border: #000000 solid 1px;
   border-radius: 5px;
   display: inline-block;
+  vertical-align: top;
 }
 
 .jar {
