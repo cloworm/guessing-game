@@ -70,13 +70,21 @@ function provideHint(event){
   event.preventDefault();
   var high = Math.ceil(winningNumber/10)*10;
   var low = Math.floor(winningNumber/10)*10;
-  $('#hint-text').html("<h7>The number is between " + low + " and " + high + ".</h7>");
+  $('.hint-text').html("<h7>The number is between " + low + " and " + high + ".</h7>");
 }
 
 // Allow the "Player" to Play Again
 
-function playAgain(){
-	// add code here
+$(document).ready(function() {
+  $('#play-again').on('click', playAgain);
+});
+
+function playAgain(event){
+  winningNumber = generateWinningNumber();
+  guesses = [];
+  $('.notification').remove();
+  $('.hint-text').remove();
+  $('.tries').html(5);
 }
 
 
