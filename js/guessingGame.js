@@ -2,9 +2,6 @@
 // try to elminate these global variables in your project, these are here just to start.
 
 var playersGuess;
-var winningNumber = generateWinningNumber();
-
-
 
 /* **** Guessing Game Functions **** */
 
@@ -15,10 +12,17 @@ function generateWinningNumber(){
   return Math.floor((Math.random() * 100) + 1);
 }
 
-// Fetch the Players Guess
+var winningNumber = generateWinningNumber();
 
-function playersGuessSubmission(){
-	// add code here
+// Fetch the Players Guess
+$(document).ready(function() {
+  $('#submit').on('click', playersGuessSubmission);
+})
+
+function playersGuessSubmission(event){
+  event.preventDefault();
+	playersGuess = +$('#guess').val();
+  $('#guess').val("");
 }
 
 // Determine if the next guess should be a lower or higher number
