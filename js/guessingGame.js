@@ -52,6 +52,7 @@ function checkGuess(){
   } else {
     $('.notification').html("<p>Try Again</p>");
     guesses.push(playersGuess);
+    $('.tries').html(5-guesses.length);
   }
 }
 
