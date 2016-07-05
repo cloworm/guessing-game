@@ -65,7 +65,7 @@
             W = window.innerWidth;
             H = window.innerHeight;
             canvas.width = W;
-            canvas.height = H;
+            canvas.height = H * .75;
         });
 
     });
