@@ -4,6 +4,8 @@
 var playersGuess;
 var guesses = [];
 
+$('#canvas').hide();
+
 /* **** Guessing Game Functions **** */
 
 // Generate the Winning Number
@@ -51,9 +53,13 @@ function checkGuess(){
   }
 
   if (playersGuess === winningNumber) {
-    $('.notification').html("<p>You Win!</p>");
+    $('.notification').html("<h1 class=\"animated tada win\"><strong>YOU WIN!</strong></h1>");
+    $('#canvas').show();
   } else if (duplicate == true) {
     $('.notification').html("<p>You've already guessed that.</p>");
+  } else if (guesses.length == 4) {
+    $('.notification').html("<h1 class=\"animated wobble lose\"><strong>YOU LOSE</strong></h1>");
+    $('.tries').html(0);
   } else {
     $('.notification').html(lowerOrHigher());
     guesses.push(playersGuess);
@@ -82,11 +88,11 @@ $(document).ready(function() {
 function playAgain(event){
   winningNumber = generateWinningNumber();
   guesses = [];
-  $('.notification').remove();
-  $('.hint-text').remove();
+  $('.notification').html("");
+  $('.hint-text').html("");
   $('.tries').html(5);
+  $('#canvas').hide();
 }
 
 
 /* **** Event Listeners/Handlers ****  */
-

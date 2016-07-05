@@ -4,6 +4,9 @@ body {
 
 .jumbotron {
   background-color: #ffffff !important;
+  position: absolute;
+  left: 15%;
+  right: 15%;
 }
 
 .box {
@@ -48,4 +51,25 @@ strong {
   display: flex;
   align-items: center;     /* Align the flex-items vertically */
   justify-content: center;
+}
+
+.win {
+  font-size: 75px !important;
+  background: -webkit-linear-gradient(#26c199, #38a78a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lose {
+  font-size: 75px !important;
+  background: -webkit-linear-gradient(#ee25ba, #ee173b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+canvas {
+  display: block;
+  position: relative;
+  zindex: 1;
+  pointer-events: none;
 }
