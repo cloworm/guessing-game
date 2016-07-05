@@ -31,6 +31,14 @@ function playersGuessSubmission(event){
 
 function lowerOrHigher(){
 	// add code here
+  var amount;
+  if(playersGuess > winningNumber) {
+    amount = Math.ceil((playersGuess/winningNumber)/10)*10;
+    return "Too high! You are less than " + amount + " off.";
+  } else {
+    amount = Math.ceil((playersGuess/winningNumber)/10)*10;
+    return "Too low! You are less than " + amount + " off.";
+  }
 }
 
 // Check if the Player's Guess is the winning number
@@ -50,7 +58,7 @@ function checkGuess(){
   } else if (duplicate == true) {
     $('.notification').html("<p>You've already guessed that.</p>");
   } else {
-    $('.notification').html("<p>Try Again</p>");
+    $('.notification').html(lowerOrHigher());
     guesses.push(playersGuess);
     $('.tries').html(5-guesses.length);
   }
