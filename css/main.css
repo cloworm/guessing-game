@@ -1,5 +1,5 @@
 body {
-  background-image: url("images/swirl_pattern.png");
+  background-image: url("swirl_pattern.png");
 }
 
 .jumbotron {
@@ -24,7 +24,7 @@ body {
 }
 
 .jar {
-  background-image: url("images/jar.jpeg");
+  background-image: url("jar.jpeg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
