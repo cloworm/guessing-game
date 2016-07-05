@@ -24,7 +24,7 @@ body {
 }
 
 .jar {
-  background-image: url("jar.jpeg");
+  background-image: url("/jar.jpeg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
