@@ -9,10 +9,14 @@ body {
   right: 15%;
 }
 
+h3 .description{
+  padding: 10px;
+}
+
 #box1, #box2, #box3, #box4, #box5 {
   height: 50px;
   width: 50px;
-  border: #000000 solid 1px;
+  border: #000000 solid 5px;
   border-radius: 5px;
   display: inline-block;
   vertical-align: top;
@@ -78,4 +82,47 @@ canvas {
   position: relative;
   zindex: 1;
   pointer-events: none;
+}
+
+.bubble
+{
+position: absolute;
+top: 10px;
+right: 0px;
+width: 300px;
+height: 130px;
+padding: 0px;
+background: #FFFFFF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: #000000 solid 5px;
+}
+
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 0 15px 15px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+right: -15px;
+top: 76px;
+}
+
+.bubble:before
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 19px 0 19px 19px;
+border-color: transparent #000000;
+display: block;
+width: 0;
+z-index: 0;
+right: -24px;
+top: 72px;
 }
