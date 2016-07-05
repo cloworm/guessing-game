@@ -17,9 +17,6 @@
   var winningNumber = generateWinningNumber();
 
   // Fetch the Players Guess
-  $(document).ready(function() {
-    $('#submit').on('click', playersGuessSubmission);
-  })
 
   function playersGuessSubmission(event){
     event.preventDefault();
@@ -80,9 +77,6 @@
   }
 
   // Create a provide hint button that provides additional clues to the "Player"
-  $(document).ready(function() {
-    $('#hint').on('click', provideHint);
-  })
 
   function provideHint(event) {
     event.preventDefault();
@@ -92,10 +86,6 @@
   }
 
   // Allow the "Player" to Play Again
-
-  $(document).ready(function() {
-    $('#play-again').on('click', playAgain);
-  });
 
   function playAgain(event) {
     winningNumber = generateWinningNumber();
@@ -131,5 +121,9 @@
   }
 
   /* **** Event Listeners/Handlers ****  */
-
+  $(document).ready(function() {
+    $('#submit').on('click', playersGuessSubmission);
+    $('#hint').on('click', provideHint);
+    $('#play-again').on('click', playAgain);
+  })
 })();
