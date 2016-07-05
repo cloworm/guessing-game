@@ -114,6 +114,7 @@ function endGame() {
   $('#guess').hide();
   $('#hint').hide();
   $('#submit').hide();
+  $('.hint-text').html("");
 }
 
 function newGame() {
