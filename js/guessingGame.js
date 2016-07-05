@@ -34,10 +34,10 @@ function lowerOrHigher(){
   var amount;
   if(playersGuess > winningNumber) {
     amount = Math.ceil((playersGuess/winningNumber)/10)*10;
-    return "Too high! You are less than " + amount + " off.";
+    return "<p>Too high! You are less than " + amount + " off.</p>";
   } else {
     amount = Math.ceil((playersGuess/winningNumber)/10)*10;
-    return "Too low! You are less than " + amount + " off.";
+    return "<p>Too low! You are less than " + amount + " off.</p>";
   }
 }
 
@@ -56,6 +56,8 @@ function checkGuess(){
     $('.notification').html("<h1 class=\"animated tada win\"><strong>YOU WIN!</strong></h1>");
     $('#canvas').show();
     endGame();
+  } else if (playersGuess < 1 || playersGuess > 100) {
+    $('.notification').html("<p>You <strong>must</strong> enter a number from 1-100.</p>");
   } else if (duplicate == true) {
     $('.notification').html("<p>You've already guessed that.</p>");
   } else if (guesses.length >= 4) {
