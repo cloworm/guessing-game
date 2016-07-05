@@ -61,12 +61,16 @@ function checkGuess(){
   } else if (guesses.length >= 4) {
     $('.notification').html("<h1 class=\"animated wobble lose\"><strong>YOU LOSE</strong></h1>");
     guesses.push(playersGuess);
+    $('.chance').html("CHANCES");
     $('#box' + guesses.length).html("<h3>" + guesses[guesses.length - 1] + "</h3>");
     $('.tries').html(0);
     endGame();
   } else {
     $('.notification').html(lowerOrHigher());
     guesses.push(playersGuess);
+    if (guesses.length == 4) {
+      $('.chance').html("CHANCE");
+    }
     $('.tries').html(5-guesses.length);
     $('#box' + guesses.length).html("<h3>" + guesses[guesses.length - 1] + "</h3>");
   }
@@ -114,10 +118,12 @@ function newGame() {
   $('#guess').show();
   $('#hint').show();
   $('#submit').show();
+  $('.chance').html("CHANCES");
   $('#box1').html("");
   $('#box2').html("");
   $('#box3').html("");
   $('#box4').html("");
   $('#box5').html("");
 }
+
 /* **** Event Listeners/Handlers ****  */
