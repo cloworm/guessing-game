@@ -107,6 +107,7 @@
     $('#hint').hide();
     $('#submit').hide();
     $('.hint-text').html("");
+    $('#play-again').toggleClass("btn-success");
   }
 
   function newGame() {
@@ -120,6 +121,7 @@
     $('#box3').html("");
     $('#box4').html("");
     $('#box5').html("");
+    $('#play-again').toggleClass("btn-success");
   }
 
   /* **** Event Listeners/Handlers ****  */
