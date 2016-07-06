@@ -52,6 +52,8 @@
     if (playersGuess === winningNumber) {
       $('.notification').html("<h1 class=\"animated tada win\"><strong>YOU WIN!</strong></h1>");
       $('.face').html("<img src=\"js/jellybeans-pile.png\">");
+      guesses.push(playersGuess);
+      $('#box' + guesses.length).html("<h3 class=\"winning-guess\">" + guesses[guesses.length - 1] + "</h3>");
       $('#canvas').show();
       endGame();
     } else if (playersGuess < 1 || playersGuess > 100) {
@@ -126,4 +128,5 @@
     $('#hint').on('click', provideHint);
     $('#play-again').on('click', playAgain);
   })
+
 })();
